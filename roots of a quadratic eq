@@ -1,0 +1,19 @@
+from z3 import *
+
+x=Real('x')
+
+s=Solver()
+
+s.add(x*x - 6*x + 8==0)     #any equation with real solution
+s.check()
+m = s.model()
+print (s.model())
+
+s.add(And(x*x-6*x+8==0, x!=m[x]))
+s.check()
+print(s.model())
+
+#output
+#[x = 2]
+#[x = 4]
+
