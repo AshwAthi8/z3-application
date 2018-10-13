@@ -1,3 +1,4 @@
+#this is a z3 implementation code
 from z3 import *
 
 x=Real('x')
@@ -5,7 +6,7 @@ x=Real('x')
 s=Solver()
 
 s.add(x*x - 6*x + 8==0)     #any equation with real solution
-s.check()
+s.check()                   
 m = s.model()
 print (s.model())
 
